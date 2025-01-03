@@ -36,7 +36,12 @@ func DBSet() *mongo.Client{
 var Client *mongo.Client = DBSet()
 
 func UserData(client *mongo.Client, collectionName) *mongo.Collection {
+	var collection *mongo.Collection = client.Database("Ecommerce").Collection(collectionName)
+	return collection
 	
 }
 
-func ProductData(client *mongo.Client, collectioName string) *mongo.Collection{}
+func ProductData(client *mongo.Client, collectioName string) *mongo.Collection{
+	var productCollection *mongo.Client = client.Database("Ecommerce").Collection(collectionName)
+	return produCtcollection
+}
