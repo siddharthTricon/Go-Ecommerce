@@ -13,6 +13,7 @@ type User struct {
 	Password        *string            `json:"password" validate:"required,min=6"`
 	Email           *string            `json:"email" validate:"required,email"`
 	Phone           *string            `json:"phone" validate:"required`
+	Token           *string            `json:"token"`
 	Refresh_Token   *string            `json:"token"`
 	Created_At      time.Time          `json:"created_at" `
 	Updated_At      time.Time          `json:"updated_at"`
@@ -30,7 +31,7 @@ type Product struct {
 	Image        *string            `json:"image" `
 }
 
-type ProdctUser struct {
+type ProductUser struct {
 	Product_ID   primitive.ObjectID `bson:"_id"`
 	Product_Name *string            `json:"product_name" bson:"product_name"`
 	Price        int                `json:"price" bson:"price"`
